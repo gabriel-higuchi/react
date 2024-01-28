@@ -1,5 +1,5 @@
-import Form from "../components/FormLogin";
-import Logo from "../assets/LogoNova.svg";
+import FormFunc from "../../components/FormLogin";
+import Logo from "../../assets/LogoNova.svg"
 import { BackContainer, LogoContainer, LoginContent } from "./styled";
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
                 </header>
             </LogoContainer>
             <LoginContent>
-                <Form/>
+                <FormFunc/>
             </LoginContent>
         </BackContainer>
     );

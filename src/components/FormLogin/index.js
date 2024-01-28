@@ -1,27 +1,31 @@
-import styles from "./form.module.css";
+import {FormContainer,LoginInput,LoginButton,LoginTexto,Form,EsqSenha} from "./styled.js"
+import { useState } from "react";
 
-function Form() {
-  
+
+
+
+function FormFunc() {
+  const [color,setColor] = useState("black")
+
+  function handleChangeColor(e){
+    setColor(e.target.value)
+  }
+
+
   return (
-    <form>
-      <h1 className={styles.LoginTexto}>Login</h1>
-      <div className={styles.FormContainer}>
-        <div>
-          <input type="text" placeholder="Digite seu nome"></input>
-        </div>
-        <div>
-          <input type="password" placeholder="Digite sua senha"></input>
-        </div>
-        <div>
-          <a href="https://www.google.com/">
-            <button type="submit">Entrar</button>
-          </a>
+    <Form>
+      <LoginTexto>Login</LoginTexto>
+      <FormContainer>
+          <LoginInput type="text" placeholder="Digite seu nome"></LoginInput>
+          <LoginInput type="password" placeholder="Digite sua senha"></LoginInput>
+            <LoginButton type="submit" color={color}>Entrar</LoginButton>
+            <LoginInput type="color" value={color} onChange={handleChangeColor}></LoginInput>
           <br></br>
-          <a href="https://www.google.com/">Esqueceu sua senha?</a>
-        </div>
-      </div>
-    </form>
+          <EsqSenha href="https://www.google.com/">Esqueceu sua senha?</EsqSenha>
+      </FormContainer>
+
+    </Form>
   );
 }
 
-export default Form;
+export default FormFunc;
