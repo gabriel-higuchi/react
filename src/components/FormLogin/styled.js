@@ -27,7 +27,7 @@ export const LoginButton = styled.button`
     box-shadow: 0 .1rem .1rem 1px rgba(116,116, 116, 0.37);
     cursor: pointer;
     transition: all .5s ease-in-out;
-    background-color: ${(props) => props.color};
+    background-color: #1D4B73;
     width: 40%;
     color: #ffffff;
     font-weight: bold;
