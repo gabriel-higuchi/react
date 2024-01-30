@@ -40,7 +40,7 @@ export const RegTexto = styled.h1`
     font-size: 4.6rem;
     height: 25%;
     color: #1D4B73;
-    margin-bottom: 1rem;
+    margin-bottom:1rem;
     margin-left:27%;
 
 
@@ -49,12 +49,16 @@ export const RegInput = styled.input`
     padding: 0.8rem 1.2rem;
     border-radius: 1rem;
     border: 1px solid #cdcdcd;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     width: 30%;
     height: 2.5rem;
     margin-left: 10%;
     box-shadow:3px 3px 6px rgb(142, 142, 142);
-    margin-bottom: 5%;
+    margin-bottom: 3%;
+    &.fontpequena{
+        font-size: 1rem;
+    }
+        
 `
 export const RegisterButton = styled.button`
     padding: 1.5rem 1rem;
@@ -76,6 +80,17 @@ export const RegisterButton = styled.button`
 
     }
     margin-left: 25%;
-    margin-top: 7%;
+    margin-bottom: 10%;
 `
+export const CompleteStyle = styled.div`
+    margin-left: 28%;
+`
+
+
+
+
+
+    
+
+
 
