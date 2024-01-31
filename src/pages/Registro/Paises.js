@@ -7,18 +7,28 @@ export default function CountrySelect() {
   return (
     <Autocomplete
       id="country-select-demo"
-      sx={{ width: '48%',
-            marginLeft:'40%',
+      sx={{ 
+        padding: '0.8rem 1.2rem',
+        borderRadius: '1rem',
+        border: '1px solid #cdcdcd',
+        fontSize: '1.3rem',
+        width: '30%',
+        height: '2.5rem',
+        boxShadow: '3px 3px 6px rgb(142, 142, 142)',
+        backgroundColor: '#ffffff',
 
-            
-            
-            
-            }}
+        marginBottom: '3%',
+      }}
       options={countries}
       autoHighlight
       getOptionLabel={(option) => option.label}
       renderOption={(props, option) => (
-        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
+        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 }, '& > label':{
+          fontSize: '3rem',
+          fontWeight: 'bold',
+          color: '#1D4B73',
+        
+        } }} {...props}>
           <img
             loading="lazy"
             width="20"

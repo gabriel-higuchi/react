@@ -34,6 +34,13 @@ export const FormRegContainer = styled.div`
     transform: translate(-50%, -50%);
     font-family: "Poppins", sans-serif;
     flex-direction: column;
+
+    & > div {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
     
 `
 export const RegTexto = styled.h1`
@@ -52,7 +59,6 @@ export const RegInput = styled.input`
     font-size: 1.3rem;
     width: 30%;
     height: 2.5rem;
-    margin-left: 10%;
     box-shadow:3px 3px 6px rgb(142, 142, 142);
     margin-bottom: 3%;
     &.fontpequena{

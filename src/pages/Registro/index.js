@@ -46,33 +46,26 @@ function Registro(){
 
         }
 
-    function handleRegInfos(e){
-        const {name,value} = e.target
-        switch (name){
-            case 'Nome':
-                setName(value)
-                break
-            case 'CPF':
-                setCpf(tratandoCPF(value))
-                break
-            case 'celular':
-                setCelular(tratandoCelular(value))
-                break
-            case 'email':
-                setEmail(value)
-                break
-            case 'pass':
-                setPass(value)
-                break
-            case 'pais':
-                setPais(value)
-                break
-            default:
-                break
+    function handleRegInfos(e) {
+        const { name, value } = e.target;
+
+        const handlers = {
+            Nome: setName,
+            CPF: (value) => setCpf(tratandoCPF(value)),
+            celular: (value) => setCelular(tratandoCelular(value)),
+            email: setEmail,
+            pass: setPass,
+            pais: setPais,
+        };
+
+        const handler = handlers[name];
+        if (handler) {
+            handler(value);
         }
     }
-    function handlePrintInfos(){
-        console.log(`Nome: ${name} CPF: ${cpf} Celular: ${celular} Email: ${email} Senha: ${pass} País: ${pais}`)
+
+    function handlePrintInfos() {
+        console.log(`Nome: ${name} CPF: ${cpf} Celular: ${celular} Email: ${email} Senha: ${pass} País: ${pais}`);
     }
 
     
@@ -84,15 +77,17 @@ function Registro(){
             </LogoRegContainer>
             <FormRegContainer>
                 <RegTexto>Registrar</RegTexto>
+                <div>
                 <RegInput type="text" name ='Nome'placeholder="Nome" value={name} onChange={handleRegInfos}></RegInput>
                 <RegInput type="text" name = 'CPF'placeholder="CPF" value={cpf} onChange={handleRegInfos}></RegInput>
                 <RegInput type="text" name="email" placeholder="email" value={email} onChange={handleRegInfos} className={email.length > 20 ? 'fontpequena':''}></RegInput> 
                 <RegInput type="text" name="celular" placeholder="celular" value={celular} onChange={handleRegInfos}></RegInput>
                 <RegInput type="password" name="pass" placeholder="Senha" value={pass} onChange={handleRegInfos}></RegInput>
-                <CompleteStyle>
                     <CountrySelect name='pais'></CountrySelect>
-                </CompleteStyle>
+                
+                </div>
                 <RegisterButton onClick={handlePrintInfos}>Entrar</RegisterButton>
+                
             </FormRegContainer>
         </BackRegContainer>
 
